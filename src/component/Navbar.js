@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { signOut } from "firebase/auth";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../contexts/UserContext";
+import { notifyError, notifySuccess } from "../utilities/sharedFunctions";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const user = { uid: 123 };
-  const logOut = () => {
-    //will add later
-  };
+  const { user, auth } = useContext(AuthContext);
+  // const user = { uid: 2124 };
 
+  const logOut = (event) => {
+    event.preventDefault();
+    signOut(auth)
+      .then(() => {
+        notifySuccess("Log out successful");
+      })
+      .catch((error) => {
+        notifyError("Something went wrong. Tray again");
+      });
+  };
   return (
     <div className="px-4 py-4 mx-auto  bg-gray-100 sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
@@ -54,7 +65,7 @@ export const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            {user.uid && (
+            {user?.uid && (
               <li>
                 <NavLink
                   to="/services"
@@ -71,7 +82,7 @@ export const Navbar = () => {
               </li>
             )}
 
-            {user.uid && (
+            {user?.uid && (
               <li>
                 <NavLink
                   to="/add-service"
@@ -87,7 +98,7 @@ export const Navbar = () => {
                 </NavLink>
               </li>
             )}
-            {user.uid && (
+            {user?.uid && (
               <li>
                 <NavLink
                   to="/my-reviews"
@@ -130,7 +141,7 @@ export const Navbar = () => {
             <div className="relative flex-shrink-0 mr-2">
               <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-600 border rounded-full text-gray-800 border-gray-50"></span>
               <img
-                src={user.photoURL}
+                src={user?.photoURL}
                 alt=""
                 className="w-14 h-14 border rounded-full bg-gray-500 border-gray-300"
               />
@@ -245,7 +256,7 @@ export const Navbar = () => {
                         Home
                       </NavLink>
                     </li>
-                    {user.uid && (
+                    {user?.uid && (
                       <li>
                         <NavLink
                           to="/services"
@@ -261,7 +272,7 @@ export const Navbar = () => {
                         </NavLink>
                       </li>
                     )}
-                    {user.uid && (
+                    {user?.uid && (
                       <li>
                         <NavLink
                           to="/add-service"
@@ -277,7 +288,7 @@ export const Navbar = () => {
                         </NavLink>
                       </li>
                     )}
-                    {user.uid && (
+                    {user?.uid && (
                       <li>
                         <NavLink
                           to="/my-reviews"
