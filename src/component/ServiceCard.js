@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
   console.log(service);
-  const { thumbnail, name, info, price } = service;
+  const { thumbnail, name, info, price, _id } = service;
   console.log(info.length);
   let details;
   if (info.length > 100) {
@@ -26,7 +26,7 @@ const ServiceCard = ({ service }) => {
           <span className="text-xl text-red-600 font-semibold">${price}</span>
         </p>
         <button className="px-6 py-3 bg-cyan-400 rounded-md">
-          <Link>View Details</Link>
+          <Link to={`../services/${_id}`}>View Details</Link>
         </button>
       </div>
     </div>
