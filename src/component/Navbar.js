@@ -65,22 +65,21 @@ export const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            {user?.uid && (
-              <li>
-                <NavLink
-                  to="/services"
-                  aria-label="services"
-                  title="services"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "font-medium tracking-wide text-purple-600"
-                      : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
-                  }
-                >
-                  Services
-                </NavLink>
-              </li>
-            )}
+
+            <li>
+              <NavLink
+                to="/services"
+                aria-label="services"
+                title="services"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-medium tracking-wide text-purple-600"
+                    : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                }
+              >
+                Services
+              </NavLink>
+            </li>
 
             {user?.uid && (
               <li>
