@@ -12,6 +12,7 @@ export const Navbar = () => {
     event.preventDefault();
     signOut(auth)
       .then(() => {
+        localStorage.removeItem("access-token");
         notifySuccess("Log out successful");
       })
       .catch((error) => {

@@ -8,7 +8,11 @@ import {
 } from "firebase/auth";
 import { AuthContext } from "../contexts/UserContext";
 import { FcGoogle } from "react-icons/fc";
-import { notifyError, notifySuccess } from "../utilities/sharedFunctions";
+import {
+  notifyError,
+  notifySuccess,
+  requestJwtToken,
+} from "../utilities/sharedFunctions";
 
 const RegisterForm = () => {
   const { auth } = useContext(AuthContext);
@@ -105,9 +109,10 @@ const RegisterForm = () => {
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
+      .then((result) => {
         setErr("");
         notifySuccess("Successfully Registered");
+        requestJwtToken(result.user.email);
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: url,
@@ -136,6 +141,7 @@ const RegisterForm = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         notifySuccess("log-in Successful");
+        requestJwtToken(result.user.email);
         navigate(from, { replace: true });
       })
       .catch((error) => {

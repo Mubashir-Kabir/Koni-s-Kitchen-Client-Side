@@ -8,7 +8,11 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/UserContext";
 import { FcGoogle } from "react-icons/fc";
-import { notifyError, notifySuccess } from "../utilities/sharedFunctions";
+import {
+  notifyError,
+  notifySuccess,
+  requestJwtToken,
+} from "../utilities/sharedFunctions";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -38,6 +42,7 @@ const LoginForm = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         notifySuccess("Log-in Successful");
+        requestJwtToken(email);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -59,6 +64,7 @@ const LoginForm = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         notifySuccess("Log-in Successful");
+        requestJwtToken(result.user.email);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -76,6 +82,7 @@ const LoginForm = () => {
         notifyError("Something went wrong!!");
       });
   };
+
   return (
     <div>
       {/* Log in form */}
