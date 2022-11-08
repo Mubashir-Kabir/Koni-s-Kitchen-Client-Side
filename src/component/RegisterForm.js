@@ -172,7 +172,7 @@ const RegisterForm = () => {
               name="name"
               id="name"
               placeholder="Full Name"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-purple-600"
+              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -182,7 +182,7 @@ const RegisterForm = () => {
               name="photoURL"
               id="photoURL"
               placeholder="link of your picture "
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-purple-600"
+              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -193,7 +193,7 @@ const RegisterForm = () => {
               name="email"
               id="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-purple-600"
+              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -204,12 +204,12 @@ const RegisterForm = () => {
               name="password"
               id="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-purple-600"
+              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
             />
           </div>
           <button
             onClick={signUpWithEmailPass}
-            className="block w-full p-3 text-center rounded-md text-gray-50 bg-purple-600 hover:bg-purple-800"
+            className="block w-full p-3 text-center rounded-md text-gray-50 bg-cyan-400 hover:bg-cyan-600"
           >
             Register
           </button>
@@ -238,7 +238,7 @@ const RegisterForm = () => {
           Already have an account?
           <Link
             to="/log-in"
-            className="text-purple-600 hover:underline hover:text-purple-400 ml-2"
+            className="text-cyan-500 hover:underline hover:text-cyan-600 ml-2"
           >
             Log in
           </Link>

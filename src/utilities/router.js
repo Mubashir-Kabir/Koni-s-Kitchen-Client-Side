@@ -26,7 +26,8 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        loader: () => fetch("https://api.itbook.store/1.0/new"),
+        loader: () =>
+          fetch("https://koni-s-kitchen-server-side.vercel.app/services"),
         element: <Services></Services>,
       },
       {

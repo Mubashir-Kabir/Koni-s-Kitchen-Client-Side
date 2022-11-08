@@ -116,7 +116,7 @@ const LoginForm = () => {
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-purple-600"
             />
-            <div className="flex justify-end text-xs text-purple-600 hover:underline hover:text-purple-400">
+            <div className="flex justify-end text-xs text-cyan-500 hover:underline hover:text-cyan-600">
               <span className="hover:cursor-pointer" onClick={forgotPass}>
                 Forgot Password?
               </span>
@@ -124,7 +124,7 @@ const LoginForm = () => {
           </div>
           <button
             type="submit"
-            className="block w-full p-3 text-center rounded-md transition duration-200 text-gray-50 bg-purple-600 hover:bg-purple-800"
+            className="block w-full p-3 text-center rounded-md transition duration-200 text-gray-50 bg-cyan-400 hover:bg-cyan-600"
           >
             Log in
           </button>
@@ -149,7 +149,7 @@ const LoginForm = () => {
           Don't have an account?
           <Link
             to="/register"
-            className=" text-purple-600 hover:underline hover:text-purple-400 ml-2"
+            className=" text-cyan-500 hover:underline hover:text-cyan-600 ml-2"
           >
             Register
           </Link>
