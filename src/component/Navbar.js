@@ -7,7 +7,6 @@ import { notifyError, notifySuccess } from "../utilities/sharedFunctions";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, auth } = useContext(AuthContext);
-  // const user = { uid: 2124 };
 
   const logOut = (event) => {
     event.preventDefault();
