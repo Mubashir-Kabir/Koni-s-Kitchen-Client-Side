@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  console.log(service);
   const { thumbnail, name, info, price, _id } = service;
-  console.log(info.length);
   let details;
   if (info.length > 100) {
     details = `${info.slice(0, 100)}. . .`;
