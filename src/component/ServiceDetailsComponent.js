@@ -42,6 +42,8 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
       reviewMessage: message,
       userEmail: email,
       userImg: photoURL,
+      serviceName: name,
+      serviceImg: img,
     };
     fetch("https://koni-s-kitchen-server-side.vercel.app/reviews", {
       method: "POST",
