@@ -1,9 +1,10 @@
 import React from "react";
+import ServiceAddForm from "../component/ServiceAddForm";
 
 const AddService = () => {
   return (
     <div>
-      <h1>Add Service</h1>
+      <ServiceAddForm></ServiceAddForm>
     </div>
   );
 };

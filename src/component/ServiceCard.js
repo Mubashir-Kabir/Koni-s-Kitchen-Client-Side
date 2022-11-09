@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   const { thumbnail, name, info, price, _id } = service;
   let details;
-  if (info.length > 100) {
+  if (info?.length > 100) {
     details = `${info.slice(0, 100)}. . .`;
   } else {
     details = info;

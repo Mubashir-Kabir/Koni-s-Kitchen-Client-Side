@@ -11,8 +11,6 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
   const [message, setMessage] = useState("");
   const [err, setErr] = useState("");
 
-  const { displayName, photoURL, email } = user;
-
   const resultHandler = (result) => {
     if (result.status) {
       notifySuccess("Your Review posted Successfully");
@@ -37,11 +35,11 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
     }
     setErr("");
     const review = {
-      UserName: displayName,
+      UserName: user?.displayName,
       postId: _id,
       reviewMessage: message,
-      userEmail: email,
-      userImg: photoURL,
+      userEmail: user.email,
+      userImg: user?.photoURL,
       serviceName: name,
       serviceImg: img,
     };
