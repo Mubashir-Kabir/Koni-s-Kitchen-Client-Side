@@ -33,6 +33,22 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
     if (!message) {
       return setErr("Please give a feedback first");
     }
+
+    //trying start
+    const current = new Date();
+    const timeObj =
+      current.getFullYear() +
+      current.getMonth() +
+      current.getDate() +
+      current.getHours() +
+      current.getMinutes() +
+      current.getSeconds() +
+      current.getMilliseconds();
+
+    console.log(timeObj);
+
+    //trying end
+
     setErr("");
     setIsOpen(!isOpen);
 
@@ -44,6 +60,7 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
       userImg: user?.photoURL,
       serviceName: name,
       serviceImg: img,
+      timeObj,
     };
     fetch("https://koni-s-kitchen-server-side.vercel.app/reviews", {
       method: "POST",

@@ -12,14 +12,18 @@ const ServiceDetails = () => {
 
   useTitle(name);
 
+  let left = false;
+
   useEffect(() => {
     fetch(
       `https://koni-s-kitchen-server-side.vercel.app/reviews?key=postId&value=${_id}`
     )
       .then((res) => res.json())
-      .then((data) => setReviews(data.data));
+      .then((data) => {
+        setReviews(data.data);
+      });
   }, [reload, _id]);
-  let left = true;
+
   return (
     <div>
       <ServiceDetailsComponent

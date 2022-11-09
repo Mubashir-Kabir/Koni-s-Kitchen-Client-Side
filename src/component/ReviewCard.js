@@ -2,7 +2,6 @@ import React from "react";
 import { AiOutlineStar } from "react-icons/ai";
 
 const ReviewCard = ({ review }) => {
-  console.log(review);
   const { userImg, UserName, reviewMessage } = review;
   return (
     <div className="container bg-gray-200 my-5 shadow-xl flex flex-col w-full max-w-3xl divide-y rounded-lg divide-gray-300 bg-yellow-300-50 text-left text-gray-800">

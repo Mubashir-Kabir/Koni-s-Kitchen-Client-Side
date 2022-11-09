@@ -2,7 +2,7 @@ import React from "react";
 import useTitle from "../hooks/useTitle";
 
 const Blogs = () => {
-  useTitle("Blog");
+  useTitle("Blogs");
   return (
     <section className="  text-gray-800">
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">

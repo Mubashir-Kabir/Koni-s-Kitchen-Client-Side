@@ -17,7 +17,6 @@ const Services = () => {
         setLoading(false);
       });
   }, []);
-  console.log(services);
 
   return (
     <>
