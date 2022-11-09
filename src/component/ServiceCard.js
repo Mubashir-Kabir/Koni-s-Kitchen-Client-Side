@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const ServiceCard = ({ service }) => {
-  const { thumbnail, name, info, price, _id } = service;
+  const { thumbnail, name, info, price, _id, img } = service;
   let details;
   if (info?.length > 100) {
     details = `${info.slice(0, 100)}. . .`;
@@ -11,11 +12,16 @@ const ServiceCard = ({ service }) => {
   }
   return (
     <div className="bg-gray-200 rounded-lg">
-      <img
-        className="object-cover w-full h-56 mb-2 rounded-t-lg shadow-lg md:h-64 xl:h-80"
-        src={thumbnail}
-        alt=""
-      />
+      <PhotoProvider>
+        <PhotoView src={img}>
+          <img
+            className="object-cover w-full h-56 mb-2 rounded-t-lg shadow-lg md:h-64 xl:h-80 hover:cursor-pointer"
+            src={thumbnail}
+            alt=""
+          />
+        </PhotoView>
+      </PhotoProvider>
+
       <div className="p-6">
         <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
           {name}

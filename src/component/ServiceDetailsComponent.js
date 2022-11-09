@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../contexts/UserContext";
 import { notifySuccess } from "../utilities/sharedFunctions";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const ServiceDetailsComponent = ({ service, setReload }) => {
   const { img, name, info, price, _id } = service;
@@ -59,11 +60,15 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
     <section className="bg-gray-200 relative border-b-2 text-gray-800">
       <div className="container flex flex-col mx-auto lg:flex-row items-center">
         <div>
-          <img
-            className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-96 xl:h-80"
-            src={img}
-            alt=""
-          />
+          <PhotoProvider>
+            <PhotoView src={img}>
+              <img
+                className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-96 xl:h-80 hover:cursor-pointer"
+                src={img}
+                alt=""
+              />
+            </PhotoView>
+          </PhotoProvider>
         </div>
         <div className="flex flex-col w-full p-6 lg:w-2/3 md:p-8 lg:p-12">
           <h2 className="text-3xl font-semibold leading-none">{name}</h2>
