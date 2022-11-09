@@ -86,7 +86,7 @@ const LoginForm = () => {
   return (
     <div>
       {/* Log in form */}
-      <div className="w-full p-8 space-y-3 rounded-xl bg-white shadow-2xl text-gray-800">
+      <div className="w-full p-8 space-y-3 rounded-xl bg-gray-200 shadow-md text-gray-800">
         <p className="text-red-500">{error}</p>
 
         <h1 className="text-2xl font-bold text-center">Log In</h1>
@@ -104,7 +104,7 @@ const LoginForm = () => {
               name="email"
               id="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-purple-600"
+              className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-yellow-300"
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -114,7 +114,7 @@ const LoginForm = () => {
               name="password"
               id="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-purple-600"
+              className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-yellow-300"
             />
             <div className="flex justify-end text-xs text-cyan-500 hover:underline hover:text-cyan-600">
               <span className="hover:cursor-pointer" onClick={forgotPass}>

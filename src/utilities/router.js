@@ -27,13 +27,15 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        loader: () =>
-          fetch("https://koni-s-kitchen-server-side.vercel.app/services"),
         element: <Services></Services>,
       },
       {
         path: "add-service",
-        element: <AddService></AddService>,
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "my-reviews",

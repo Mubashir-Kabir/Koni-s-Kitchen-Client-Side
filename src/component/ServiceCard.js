@@ -10,24 +10,30 @@ const ServiceCard = ({ service }) => {
     details = info;
   }
   return (
-    <div>
+    <div className="bg-gray-200 rounded-lg">
       <img
-        className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
+        className="object-cover w-full h-56 mb-2 rounded-t-lg shadow-lg md:h-64 xl:h-80"
         src={thumbnail}
         alt=""
       />
-      <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">{name}</p>
-      <p className="text-gray-700 text-left">{details}</p>
-      <div className="flex justify-between items-center mt-3">
-        <p className="text-left ">
-          <span className="bg-cyan-400 px-4 py-2 rounded-md">Price:</span>{" "}
-          <span className="text-xl text-red-600 font-semibold">${price}</span>
+      <div className="p-6">
+        <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
+          {name}
         </p>
-        <Link to={`../services/${_id}`}>
-          <button className="px-6 py-3 bg-cyan-400 rounded-md">
-            View Details
-          </button>
-        </Link>
+        <p className="text-gray-700 text-left">{details}</p>
+        <div className="flex justify-between items-center mt-3">
+          <p className="text-left ">
+            <span className="bg-yellow-300 px-4 py-2 rounded-md">Price:</span>{" "}
+            <span className="text-xl italic text-cyan-500 font-semibold">
+              ${price}
+            </span>
+          </p>
+          <Link to={`../services/${_id}`}>
+            <button className="px-6 py-3 bg-yellow-300 rounded-md hover:bg-yellow-200">
+              View Details
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

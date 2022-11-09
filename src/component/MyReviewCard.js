@@ -71,7 +71,7 @@ const MyReviewCard = ({ review, setReload }) => {
 
   return (
     <div className="relative">
-      <div className="container text-left flex flex-col w-full max-w-xl p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800">
+      <div className="container text-left flex flex-col w-full max-w-xl p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-200 text-gray-800">
         <div className="flex justify-between p-4">
           <div className="flex space-x-4">
             <div>
@@ -117,10 +117,10 @@ const MyReviewCard = ({ review, setReload }) => {
       </div>
       {isOpen && (
         <div className="absolute lg:top-0 z-10 ">
-          <div className="flex flex-col max-w-lg p-8 shadow-sm rounded-xl lg:p-12 bg-yellow-200 text-gray-800 relative">
+          <div className="flex flex-col  max-w-lg p-8 shadow-2xl rounded-xl lg:p-12 bg-gray-200 text-gray-800 relative">
             <p
               onClick={() => setIsOpen(!isOpen)}
-              className=" bg-yellow-300 px-4 py-2 rounded-full absolute top-2 right-2 text-xl font-semibold hover:cursor-pointer"
+              className=" bg-gray-300  px-4 py-2 rounded-full absolute top-2 right-2 text-xl font-semibold hover:cursor-pointer hover:bg-yellow-300"
             >
               X
             </p>

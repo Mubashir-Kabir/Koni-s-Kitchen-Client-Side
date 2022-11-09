@@ -23,7 +23,10 @@ const ServiceDetails = () => {
         setReload={setReload}
         service={service}
       ></ServiceDetailsComponent>
-      <div className="px-2 lg:px-20">
+      <div className="my-12 border-b">
+        <h3 className="text-4xl font-semibold">All Reviews</h3>
+      </div>
+      <div className="px-2 lg:px-20 mb-6">
         {reviews.map((review) => (
           <div
             key={review._id}

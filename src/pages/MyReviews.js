@@ -24,8 +24,8 @@ const MyReviews = () => {
           <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-cyan-400"></div>
         </div>
       ) : (
-        <div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="my-12 mx-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
             {reviews.map((review) => (
               <MyReviewCard
                 key={review._id}

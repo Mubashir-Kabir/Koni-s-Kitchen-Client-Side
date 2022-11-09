@@ -153,7 +153,7 @@ const RegisterForm = () => {
 
   return (
     <div>
-      <div className="w-full p-8 space-y-3 rounded-xl bg-white shadow-2xl text-gray-800">
+      <div className="w-full p-8 space-y-3 rounded-xl bg-gray-200 shadow-md text-gray-800">
         <h1 className="text-red-500">{err}</h1>
 
         <h1 className="text-2xl font-bold text-center">Register</h1>
@@ -172,7 +172,7 @@ const RegisterForm = () => {
               name="name"
               id="name"
               placeholder="Full Name"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
+              className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-yellow-300"
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -182,7 +182,7 @@ const RegisterForm = () => {
               name="photoURL"
               id="photoURL"
               placeholder="link of your picture "
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
+              className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-yellow-300"
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -193,7 +193,7 @@ const RegisterForm = () => {
               name="email"
               id="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
+              className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-yellow-300"
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -204,7 +204,7 @@ const RegisterForm = () => {
               name="password"
               id="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-200 text-gray-800 focus:border-cyan-400"
+              className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-yellow-300"
             />
           </div>
           <button

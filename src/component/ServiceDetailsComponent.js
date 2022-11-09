@@ -56,7 +56,7 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
   };
 
   return (
-    <section className="bg-yellow-300 relative border-b-2 text-gray-800">
+    <section className="bg-gray-200 relative border-b-2 text-gray-800">
       <div className="container flex flex-col mx-auto lg:flex-row items-center">
         <div>
           <img
@@ -70,7 +70,9 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
           <p className="mt-4 text-sm text-justify">{info}</p>
           <p className="mb-8 text-left mt-2">
             <span>And I Charge </span>
-            <span className="text-xl italic font-semibold">${price}</span>
+            <span className="text-xl italic font-semibold text-red-500">
+              ${price}
+            </span>
           </p>
           {user?.uid ? (
             !isOpen && (
@@ -91,11 +93,11 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
         </div>
       </div>
       {isOpen && (
-        <div className="lg:absolute lg:-top-3 lg:right-5">
-          <div className="flex flex-col max-w-lg p-8 shadow-sm rounded-xl lg:p-12 bg-yellow-200 text-gray-800 relative">
+        <div className="lg:absolute lg:top-3 mx-3 lg:right-3">
+          <div className="flex flex-col max-w-lg p-8 shadow-2xl rounded-xl lg:p-12 bg-gray-200 text-gray-800 relative">
             <p
               onClick={() => setIsOpen(!isOpen)}
-              className=" bg-yellow-300 px-4 py-2 rounded-full absolute top-2 right-2 text-xl font-semibold hover:cursor-pointer"
+              className=" bg-gray-300 px-4 py-2 rounded-full absolute top-2 right-2 text-xl font-semibold hover:cursor-pointer hover:bg-yellow-300"
             >
               X
             </p>
