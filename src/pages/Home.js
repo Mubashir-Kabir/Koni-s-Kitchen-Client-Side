@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import Banner from "../component/Banner";
 import ServiceCard from "../component/ServiceCard";
 import State from "../component/State";
+import useTitle from "../hooks/useTitle";
 
 const Home = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  useTitle("Home");
 
   useEffect(() => {
     fetch("https://koni-s-kitchen-server-side.vercel.app/services?limit=3")

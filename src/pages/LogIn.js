@@ -2,8 +2,10 @@ import React from "react";
 import LoginForm from "../component/LoginForm";
 import Lottie from "lottie-react";
 import animation from "../utilities/logInAnimation.json";
+import useTitle from "../hooks/useTitle";
 
 const LogIn = () => {
+  useTitle("Log-In");
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 my-10 px-3 lg:px-20 justify-between items-center">
       <Lottie

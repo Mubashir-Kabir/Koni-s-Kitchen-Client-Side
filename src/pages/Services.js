@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ServiceCard from "../component/ServiceCard";
 import { MdRoomService } from "react-icons/md";
+import useTitle from "../hooks/useTitle";
 
 const Services = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  useTitle("Services");
+
   useEffect(() => {
     fetch("https://koni-s-kitchen-server-side.vercel.app/services")
       .then((res) => res.json())

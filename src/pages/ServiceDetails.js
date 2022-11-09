@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReviewCard from "../component/ReviewCard";
 import ServiceDetailsComponent from "../component/ServiceDetailsComponent";
+import useTitle from "../hooks/useTitle";
 
 const ServiceDetails = () => {
   const service = useLoaderData().data;
-  const { _id } = service;
+  const { _id, name } = service;
   const [reviews, setReviews] = useState([]);
   const [reload, setReload] = useState(false);
+
+  useTitle(name);
 
   useEffect(() => {
     fetch(
@@ -15,7 +18,7 @@ const ServiceDetails = () => {
     )
       .then((res) => res.json())
       .then((data) => setReviews(data.data));
-  }, [reload]);
+  }, [reload, _id]);
   let left = true;
   return (
     <div>

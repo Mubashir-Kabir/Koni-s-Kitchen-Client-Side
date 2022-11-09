@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 const Error = () => {
+  useTitle("Not Found");
   return (
     <div>
       <section className="flex items-center h-screen p-16 bg-yellow-300 text-gray-800">
