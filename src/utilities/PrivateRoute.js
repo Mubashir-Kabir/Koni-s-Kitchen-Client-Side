@@ -9,10 +9,8 @@ const PrivateRoute = ({ children }) => {
   //show loading until the user state comes from authState to prevent going to the log in page
   if (loading) {
     return (
-      <div className="flex items-center justify-center space-x-2">
-        <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
-        <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
-        <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
+      <div className="flex h-screen items-center justify-center space-x-2">
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-cyan-400"></div>
       </div>
     );
   }

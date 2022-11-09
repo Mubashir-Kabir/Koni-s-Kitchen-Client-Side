@@ -23,9 +23,11 @@ const ServiceCard = ({ service }) => {
           <span className="bg-cyan-400 px-4 py-2 rounded-md">Price:</span>{" "}
           <span className="text-xl text-red-600 font-semibold">${price}</span>
         </p>
-        <button className="px-6 py-3 bg-cyan-400 rounded-md">
-          <Link to={`../services/${_id}`}>View Details</Link>
-        </button>
+        <Link to={`../services/${_id}`}>
+          <button className="px-6 py-3 bg-cyan-400 rounded-md">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );

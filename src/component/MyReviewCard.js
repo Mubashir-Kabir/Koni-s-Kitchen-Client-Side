@@ -39,7 +39,6 @@ const MyReviewCard = ({ review, setReload }) => {
   const resultHandler = (result) => {
     if (result.status) {
       notifySuccess("Review Updated Successfully");
-      setIsOpen(!isOpen);
       setReload((current) => !current);
     }
   };
@@ -57,6 +56,8 @@ const MyReviewCard = ({ review, setReload }) => {
       serviceName,
       serviceImg,
     };
+    setIsOpen(!isOpen);
+
     fetch(`https://koni-s-kitchen-server-side.vercel.app/reviews/${_id}`, {
       method: "PUT",
       headers: {

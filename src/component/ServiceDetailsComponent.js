@@ -14,7 +14,6 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
   const resultHandler = (result) => {
     if (result.status) {
       notifySuccess("Your Review posted Successfully");
-      setIsOpen(!isOpen);
       setReload((current) => !current);
     }
   };
@@ -34,6 +33,8 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
       return setErr("Please give a feedback first");
     }
     setErr("");
+    setIsOpen(!isOpen);
+
     const review = {
       UserName: user?.displayName,
       postId: _id,
