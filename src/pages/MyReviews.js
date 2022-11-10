@@ -13,7 +13,12 @@ const MyReviews = () => {
 
   useEffect(() => {
     fetch(
-      `https://koni-s-kitchen-server-side.vercel.app/reviews?key=userEmail&value=${user.email}`
+      `https://koni-s-kitchen-server-side.vercel.app/reviews/private?email=${user.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
     )
       .then((res) => res.json())
       .then((data) => {

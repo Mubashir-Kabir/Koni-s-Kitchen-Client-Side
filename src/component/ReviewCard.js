@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineStar } from "react-icons/ai";
 
 const ReviewCard = ({ review }) => {
-  const { userImg, UserName, reviewMessage } = review;
+  const { userImg, UserName, reviewMessage, rating } = review;
   return (
     <div className="container bg-gray-200 my-5 shadow-xl flex flex-col w-full max-w-3xl divide-y rounded-lg divide-gray-300 bg-yellow-300-50 text-left text-gray-800">
       <div className="flex justify-between p-4">
@@ -21,7 +21,7 @@ const ReviewCard = ({ review }) => {
         </div>
         <div className="flex items-center space-x-2 text-yellow-500">
           <AiOutlineStar className="text-2xl fill-current"></AiOutlineStar>
-          <span className="text-xl font-bold">4.5</span>
+          <span className="text-xl font-bold">{rating}</span>
         </div>
       </div>
       <div className="p-4 space-y-2 text-sm text-gray-600">

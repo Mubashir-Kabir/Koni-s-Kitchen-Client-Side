@@ -12,7 +12,7 @@ export const requestJwtToken = (mail) => {
     body: JSON.stringify(email),
   }).then((res) =>
     res.json().then((data) => {
-      localStorage.setItem("access-token", data.data);
+      localStorage.setItem("accessToken", data.data);
     })
   );
 };

@@ -75,20 +75,8 @@ const ServiceAddForm = () => {
   const addService = (e) => {
     e.preventDefault();
     if (name && url && price && message) {
-      //trying start
       const current = new Date();
-      const timeObj =
-        current.getFullYear() +
-        current.getMonth() +
-        current.getDate() +
-        current.getHours() +
-        current.getMinutes() +
-        current.getSeconds() +
-        current.getMilliseconds();
-
-      console.log(timeObj);
-
-      //trying end
+      const timeObj = current.toISOString();
 
       setErr("");
       const service = {

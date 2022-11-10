@@ -16,7 +16,7 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     fetch(
-      `https://koni-s-kitchen-server-side.vercel.app/reviews?key=postId&value=${_id}`
+      `https://koni-s-kitchen-server-side.vercel.app/reviews/public?id=${_id}`
     )
       .then((res) => res.json())
       .then((data) => {

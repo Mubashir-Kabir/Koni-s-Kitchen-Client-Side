@@ -9,6 +9,10 @@ const Home = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // const start_date = new Date(2012, 07, x, x, x);
+  const crr = new Date();
+  console.log(crr.toISOString());
+
   useTitle("Home");
 
   useEffect(() => {
