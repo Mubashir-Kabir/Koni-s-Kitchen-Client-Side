@@ -13,9 +13,12 @@ const Services = () => {
     fetch("https://koni-s-kitchen-server-side.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
-        setServices(data.data);
-        setLoading(false);
-      });
+        if (data.status) {
+          setServices(data.data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (

@@ -57,7 +57,7 @@ const RegisterForm = () => {
         e.target.value
       )
     ) {
-      setErr("URL must be starts with HTTP or HTTPS");
+      setErr("Invalid URL please try another");
       return;
     }
     setErr("");
@@ -113,7 +113,7 @@ const RegisterForm = () => {
         setErr("");
         notifySuccess("Successfully Registered");
         requestJwtToken(result.user.email);
-        updateProfile(auth.currentUser, {
+        updateProfile(result.user, {
           displayName: name,
           photoURL: url,
         })

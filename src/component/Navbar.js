@@ -9,6 +9,8 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, auth } = useContext(AuthContext);
 
+  console.log(user);
+
   const logOut = (event) => {
     event.preventDefault();
     signOut(auth)
@@ -20,6 +22,7 @@ export const Navbar = () => {
         notifyError("Something went wrong. Tray again");
       });
   };
+
   return (
     <div className="px-4 py-4 mx-auto  bg-yellow-300 sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">

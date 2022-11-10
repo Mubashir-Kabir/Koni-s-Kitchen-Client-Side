@@ -10,7 +10,7 @@ const MyReviewCard = ({ review, setReload }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(reviewMessage);
   const [err, setErr] = useState("");
   const { user } = useContext(AuthContext);
   const { displayName, photoURL, email } = user;
@@ -92,7 +92,6 @@ const MyReviewCard = ({ review, setReload }) => {
     setErr("");
     const review = {
       UserName: displayName,
-      // postId: _id,
       reviewMessage: message,
       userEmail: email,
       userImg: photoURL,

@@ -22,9 +22,12 @@ const MyReviews = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data.data);
-        setLoading(false);
-      });
+        if (data.status) {
+          setReviews(data.data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => console.log(err));
   }, [user, reload]);
   return (
     <>
@@ -32,10 +35,10 @@ const MyReviews = () => {
         <div className="flex h-screen items-center justify-center space-x-2">
           <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-cyan-400"></div>
         </div>
-      ) : reviews.length ? (
+      ) : reviews?.length ? (
         <div className="my-12 mx-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
-            {reviews.map((review) => (
+            {reviews?.map((review) => (
               <MyReviewCard
                 key={review._id}
                 setReload={setReload}

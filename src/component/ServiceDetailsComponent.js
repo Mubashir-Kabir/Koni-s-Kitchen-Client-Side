@@ -6,6 +6,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import { BsStarFill } from "react-icons/bs";
 
 const ServiceDetailsComponent = ({ service, setReload }) => {
+  // console.log(service);
   const { img, name, info, price, _id } = service;
   const { user } = useContext(AuthContext);
   const location = useLocation();
@@ -50,8 +51,8 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
     five = true;
   }
 
-  const resultHandler = (result) => {
-    if (result.status) {
+  const resultHandler = (data) => {
+    if (data.status) {
       notifySuccess("Your Review posted Successfully");
       setReload((current) => !current);
     }
