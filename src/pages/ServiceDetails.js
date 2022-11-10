@@ -6,7 +6,6 @@ import useTitle from "../hooks/useTitle";
 
 const ServiceDetails = () => {
   const service = useLoaderData().data;
-  console.log(service);
 
   const { _id, name } = service;
   const [reviews, setReviews] = useState([]);
@@ -22,7 +21,6 @@ const ServiceDetails = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.status) {
           setReviews(data.data);
         }

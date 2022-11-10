@@ -9,8 +9,6 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, auth } = useContext(AuthContext);
 
-  console.log(user);
-
   const logOut = (event) => {
     event.preventDefault();
     signOut(auth)
@@ -233,22 +231,22 @@ export const Navbar = () => {
                         Home
                       </NavLink>
                     </li>
-                    {user?.uid && (
-                      <li>
-                        <NavLink
-                          to="/services"
-                          aria-label="Services"
-                          title="Services"
-                          className={({ isActive }) =>
-                            isActive
-                              ? "font-medium tracking-wide text-cyan-400"
-                              : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-cyan-400"
-                          }
-                        >
-                          Services
-                        </NavLink>
-                      </li>
-                    )}
+
+                    <li>
+                      <NavLink
+                        to="/services"
+                        aria-label="Services"
+                        title="Services"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "font-medium tracking-wide text-cyan-400"
+                            : "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-cyan-400"
+                        }
+                      >
+                        Services
+                      </NavLink>
+                    </li>
+
                     {user?.uid && (
                       <li>
                         <NavLink
