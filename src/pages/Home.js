@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../component/Banner";
+import Hero from "../component/Hero";
 import ServiceCard from "../component/ServiceCard";
 import State from "../component/State";
 import useTitle from "../hooks/useTitle";
@@ -8,10 +9,6 @@ import useTitle from "../hooks/useTitle";
 const Home = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // const start_date = new Date(2012, 07, x, x, x);
-  const crr = new Date();
-  console.log(crr.toISOString());
 
   useTitle("Home");
 
@@ -45,6 +42,7 @@ const Home = () => {
           </Link>
         </>
       )}
+      <Hero></Hero>
       <State></State>
     </div>
   );

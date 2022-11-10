@@ -7,6 +7,7 @@ import { BsStarFill } from "react-icons/bs";
 const MyReviewCard = ({ review, setReload }) => {
   const { serviceName, serviceImg, reviewMessage, _id, timeObj, rating } =
     review;
+
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
   const [message, setMessage] = useState("");
@@ -157,7 +158,9 @@ const MyReviewCard = ({ review, setReload }) => {
             </div>
             <div>
               <h4 className="font-bold">{serviceName}</h4>
-              <span className="text-xs text-gray-600">2 days ago</span>
+              <span className="text-xs text-gray-600">
+                {(timeObj + "")?.split("T")[0]}
+              </span>
             </div>
           </div>
           <div className="flex items-center space-x-2 text-yellow-500">

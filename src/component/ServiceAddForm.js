@@ -130,7 +130,7 @@ const ServiceAddForm = () => {
               type="url"
               name="photoURL"
               id="photoURL"
-              placeholder="link of your picture "
+              placeholder="Image of your service "
               className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-yellow-300"
             />
           </div>
@@ -150,7 +150,7 @@ const ServiceAddForm = () => {
               onChange={handleTextArea}
               rows="3"
               //   cols="50"
-              placeholder="Message..."
+              placeholder="Service details..."
               className="p-4 w-full rounded-md resize-none text-gray-800 "
             ></textarea>
           </div>

@@ -8,7 +8,7 @@ const Banner = () => {
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-5 justify-between">
         <div className="hidden  lg:flex items-center justify-center p-6 mt-8 lg:mt-0 ">
           <Lottie
-            className="hidden lg:block"
+            className="hidden lg:block "
             animationData={animation}
             loop={true}
           />
@@ -19,9 +19,9 @@ const Banner = () => {
             <span className="text-yellow-300"> Kitchen</span>
           </h1>
           <p className="mt-6 mb-8 text-lg sm:mb-12">
-            Tasty,delicious homemade food is the destination for every food
-            lover.Food makes life live worthy and those who makes the food is
-            always greater than all.
+            Give me your precious reviews so that we can find out faults,lacks
+            and drawbacks.Make services better and can adore your choices.Keep
+            them for your better experience.
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-end">
             <Link

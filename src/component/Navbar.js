@@ -129,6 +129,7 @@ export const Navbar = () => {
               <img
                 src={user?.photoURL}
                 alt=""
+                title={user?.displayName}
                 className="w-14 h-14 border rounded-full bg-white border-gray-300"
               />
             </div>

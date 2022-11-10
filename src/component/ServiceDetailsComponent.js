@@ -12,7 +12,7 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [err, setErr] = useState("");
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(3);
   let one, two, three, four, five;
   if (rating === 1) {
     one = true;
@@ -161,7 +161,9 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
                 <span className="text-center">How was your experience?</span>
                 <div className="flex space-x-3">
                   <button
-                    onClick={() => setRating(1)}
+                    onClick={() => {
+                      setRating(1);
+                    }}
                     type="button"
                     title="Rate 1 stars"
                     aria-label="Rate 1 stars"
@@ -236,7 +238,7 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
                 <textarea
                   onChange={handleTextArea}
                   rows="3"
-                  placeholder="Message..."
+                  placeholder="Your review..."
                   className="p-4 rounded-md resize-none text-gray-800 bg-gray-50"
                 ></textarea>
                 <p className="text-red-500">{err}</p>
