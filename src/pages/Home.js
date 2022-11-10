@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../component/Banner";
+import CallToAction from "../component/CallToAction";
 import Hero from "../component/Hero";
 import ServiceCard from "../component/ServiceCard";
 import State from "../component/State";
@@ -43,6 +44,7 @@ const Home = () => {
         </>
       )}
       <Hero></Hero>
+      <CallToAction></CallToAction>
       <State></State>
     </div>
   );

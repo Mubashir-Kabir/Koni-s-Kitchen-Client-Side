@@ -5,11 +5,11 @@ const Hero = () => {
   return (
     <div className="relative my-6 lg:my-20">
       <img
-        src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+        src="https://i.ibb.co/mhvGgZH/50-States50-Cuisines-2020-Amber-Day-Lede-Option.webp"
         className="absolute inset-0 object-cover w-full h-full"
         alt=""
       />
-      <div className="relative bg-opacity-75 bg-cyan-400">
+      <div className="relative bg-opacity-75 bg-black">
         <svg
           className="absolute inset-x-0 -bottom-1 text-white"
           viewBox="0 0 1160 163"
@@ -34,7 +34,7 @@ const Hero = () => {
               <Link
                 to="/blogs"
                 aria-label=""
-                className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
+                className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-yellow-300 hover:text-yellow-500"
               >
                 Learn more
                 <svg

@@ -30,12 +30,6 @@ const Banner = () => {
             >
               Review Service
             </Link>
-            <Link
-              to="/blogs"
-              className="px-8 py-3 text-lg font-semibold border rounded border-gray-800"
-            >
-              Learn More ..
-            </Link>
           </div>
         </div>
       </div>

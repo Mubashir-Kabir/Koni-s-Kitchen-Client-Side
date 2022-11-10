@@ -19,7 +19,7 @@ export const requestJwtToken = (mail) => {
 
 export const notifySuccess = (massage) => {
   toast.success(massage, {
-    position: "bottom-right",
+    position: "top-center",
     autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
@@ -31,7 +31,7 @@ export const notifySuccess = (massage) => {
 };
 export const notifyWarn = (massage) => {
   toast.warn(massage, {
-    position: "bottom-right",
+    position: "top-center",
     autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
@@ -43,7 +43,7 @@ export const notifyWarn = (massage) => {
 };
 export const notifyError = (massage) => {
   toast.error(massage, {
-    position: "bottom-right",
+    position: "top-center",
     autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
