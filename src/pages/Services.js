@@ -41,7 +41,7 @@ const Services = () => {
             <p className="w-full text-gray-700 lg:text-sm lg:max-w-md">
               "Services are the mirror of a businessman. Good service attracts
               customers,make them feel friendly and set a better mindset between
-              people.I always try to do the best efforts for my customers. "
+              people.I always try to do the best efforts for my customers."
             </p>
           </div>
           <div className="grid gap-8 row-gap-5 mb-8 lg:grid-cols-3 lg:row-gap-8">

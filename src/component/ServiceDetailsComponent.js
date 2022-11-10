@@ -92,7 +92,7 @@ const ServiceDetailsComponent = ({ service, setReload }) => {
           <p className="mt-4 text-sm text-justify">{info}</p>
           <p className="mb-8 text-left mt-2">
             <span>And I Charge </span>
-            <span className="text-xl italic font-semibold text-red-500">
+            <span className="text-xl italic font-semibold text-cyan-500">
               ${price}
             </span>
           </p>

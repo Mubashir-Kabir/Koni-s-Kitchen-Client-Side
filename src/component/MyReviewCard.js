@@ -5,6 +5,7 @@ import { notifyError, notifySuccess } from "../utilities/sharedFunctions";
 const MyReviewCard = ({ review, setReload }) => {
   const { serviceName, serviceImg, reviewMessage, _id } = review;
   const [isOpen, setIsOpen] = useState(false);
+  const [modal, setModal] = useState(false);
   const [message, setMessage] = useState("");
   const [err, setErr] = useState("");
   const { user } = useContext(AuthContext);
@@ -21,20 +22,18 @@ const MyReviewCard = ({ review, setReload }) => {
   };
   const handleDelete = (e) => {
     e.preventDefault();
-    const isAgree = window.confirm(`Do you want to delete ${serviceName}`);
-    if (isAgree) {
-      fetch(`https://koni-s-kitchen-server-side.vercel.app/reviews/${_id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.status) {
-            setReload((current) => !current);
-            return notifySuccess("Deleted Successfully");
-          }
-          return notifyError("Something went wrong please try again");
-        });
-    }
+
+    fetch(`https://koni-s-kitchen-server-side.vercel.app/reviews/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          setReload((current) => !current);
+          return notifySuccess("Deleted Successfully");
+        }
+        return notifyError("Something went wrong please try again");
+      });
   };
   const resultHandler = (result) => {
     if (result.status) {
@@ -71,6 +70,37 @@ const MyReviewCard = ({ review, setReload }) => {
 
   return (
     <div className="relative">
+      {modal ? (
+        <div className="absolute top-0 rounded-lg bg-yellow-300 p-8 shadow-2xl">
+          <h2 className="text-lg font-bold">
+            Are you sure you want to Delete?
+          </h2>
+
+          <p className="mt-2 text-sm text-gray-500">
+            Doing that will remove this review from everywhere, are you 100%
+            sure it's OK?
+          </p>
+
+          <div className="mt-8 flex items-center justify-end text-xs">
+            <button
+              onClick={handleDelete}
+              type="button"
+              className="rounded bg-green-50 px-4 py-2 font-medium text-green-600"
+            >
+              Yes, I'm sure
+            </button>
+            <button
+              onClick={() => setModal(!modal)}
+              type="button"
+              className="ml-2 rounded bg-gray-50 px-4 py-2 font-medium text-gray-600"
+            >
+              No, go back
+            </button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="container text-left flex flex-col w-full max-w-xl p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-200 text-gray-800">
         <div className="flex justify-between p-4">
           <div className="flex space-x-4">
@@ -107,7 +137,7 @@ const MyReviewCard = ({ review, setReload }) => {
               Edit
             </button>
             <button
-              onClick={handleDelete}
+              onClick={() => setModal(!modal)}
               className="py-2 px-6 rounded bg-yellow-300 hover:bg-yellow-200"
             >
               Delete
